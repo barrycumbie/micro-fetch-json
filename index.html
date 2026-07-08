@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Micro Fetch JSON Demo</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous">
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-body-tertiary">
+  <header class="border-bottom bg-white">
+    <div class="container py-4">
+      <p class="text-uppercase text-secondary fw-semibold mb-2">Teaching Demo</p>
+      <h1 class="display-6 mb-2">Fetch a local JSON idea and render it into the DOM</h1>
+      <p class="lead mb-0">
+        This page starts with a hard-coded fallback card, then replaces it with app idea
+        data loaded from a local JSON file.
+      </p>
+    </div>
+  </header>
+
+  <main class="container py-4 py-lg-5">
+    <section aria-labelledby="ideas-heading">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+        <div>
+          <h2 id="ideas-heading" class="h3 mb-1">App ideas</h2>
+          <p class="text-body-secondary mb-0">Loaded from <code>data/ideas.json</code>.</p>
+        </div>
+        <p id="status-message" class="text-body-secondary mb-0" role="status">
+          Showing placeholder content until JSON loads.
+        </p>
+      </div>
+
+      <div id="idea-list" class="row g-4">
+        <div class="col-12">
+          <article class="card shadow-sm h-100 placeholder-card">
+            <div class="card-body">
+              <p class="text-uppercase text-secondary fw-semibold mb-2">Placeholder idea</p>
+              <h3 class="card-title h4">Example app idea</h3>
+              <p class="card-text mb-0">
+                This starter content will be replaced by the LEGO builder idea after the page
+                fetches the local JSON file.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
