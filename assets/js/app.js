@@ -1,8 +1,10 @@
 'use strict';
 
 (function() {
+  // Local URL for this teaching demo. The server returns JSON from this file.
   var IDEAS_URL = 'data/ideas.json';
 
+  // Small utility to keep DOM creation readable and consistent.
   function createElement(tagName, options) {
     var element = document.createElement(tagName);
 
@@ -76,6 +78,7 @@
       var anchor = createElement('a', {
         className: 'text-decoration-none',
         attributes: {
+          // Open external links in a new tab and protect opener context.
           href: link.url,
           target: '_blank',
           rel: 'noopener noreferrer'
@@ -170,6 +173,7 @@
   }
 
   function createIdeaCard(idea) {
+    // Build one complete card from a single idea object in the JSON array.
     var wrapper = createElement('div', {className: 'col-12'});
     var article = createElement('article', {className: 'card shadow-sm overflow-hidden'});
     var row = createElement('div', {className: 'row g-0'});
@@ -224,6 +228,7 @@
     var ideaList = document.querySelector('#idea-list');
     var statusMessage = document.querySelector('#status-message');
 
+    // Guard clause: keep UI stable if the JSON shape is unexpected.
     if (!Array.isArray(ideas) || !ideas.length) {
       statusMessage.textContent = 'No ideas were returned from the JSON file.';
       return;
@@ -232,6 +237,7 @@
     var ideaCount = ideas.length;
     var label = ideaCount === 1 ? 'idea' : 'ideas';
 
+    // Remove placeholder content, then render fresh cards from fetched data.
     ideaList.replaceChildren();
     ideas.forEach(function(idea) {
       ideaList.appendChild(createIdeaCard(idea));
@@ -241,23 +247,30 @@
 
   function showError(error) {
     var statusMessage = document.querySelector('#status-message');
+    // Show a user-friendly message while preserving the initial placeholder card.
     statusMessage.textContent =
         'Could not load the local JSON file (' + error.message +
         '), so the placeholder stays visible.';
   }
 
   function loadIdeas() {
+    // Fetch returns a Response first, then we parse JSON in a second step.
     fetch(IDEAS_URL)
         .then(function(response) {
+          // fetch() does not throw on HTTP 404/500, so check response.ok manually.
           if (!response.ok) {
             throw new Error('HTTP error: ' + response.status + ' ' + response.statusText);
           }
 
+          // Convert response body from JSON text into JavaScript objects.
           return response.json();
         })
+        // Pass parsed data into our renderer.
         .then(renderIdeas)
+        // Any network, HTTP, or parse error lands here.
         .catch(showError);
   }
 
+  // Wait until base HTML is ready before querying DOM nodes.
   document.addEventListener('DOMContentLoaded', loadIdeas);
 })();
