@@ -4,12 +4,12 @@ Small teaching demo that fetches a local JSON file and renders one app idea into
 
 ## Run locally
 
-Because the page uses `fetch()` to load `/home/runner/work/micro-fetch-json/micro-fetch-json/data/ideas.json`, serve the project over HTTP instead of opening `index.html` directly from the file system.
+Because the page uses `fetch()` to load `data/ideas.json`, serve the project over HTTP instead of opening `index.html` directly from the file system.
 
 Example:
 
 ```bash
-cd /home/runner/work/micro-fetch-json/micro-fetch-json
+cd micro-fetch-json
 python -m http.server 8000
 ```
 

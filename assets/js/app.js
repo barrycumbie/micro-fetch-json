@@ -227,11 +227,14 @@
       return;
     }
 
+    var ideaCount = ideas.length;
+    var label = ideaCount === 1 ? 'idea' : 'ideas';
+
     ideaList.replaceChildren();
     ideas.forEach(function(idea) {
       ideaList.appendChild(createIdeaCard(idea));
     });
-    statusMessage.textContent = 'Loaded ' + ideas.length + ' idea from local JSON.';
+    statusMessage.textContent = 'Loaded ' + ideaCount + ' ' + label + ' from local JSON.';
   }
 
   function showError() {
