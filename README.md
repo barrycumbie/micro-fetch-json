@@ -1,6 +1,6 @@
 # micro-fetch-json
 
-Small teaching demo that uses the Fetch API to load a local JSON file and render app idea data into the DOM.
+> teaching demo that uses the Fetch API to load a local JSON file and render app idea data into the DOM.
 
 ## What is the Fetch API?
 
