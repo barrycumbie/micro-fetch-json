@@ -237,16 +237,18 @@
     statusMessage.textContent = 'Loaded ' + ideaCount + ' ' + label + ' from local JSON.';
   }
 
-  function showError() {
+  function showError(error) {
     var statusMessage = document.querySelector('#status-message');
-    statusMessage.textContent = 'Could not load the local JSON file, so the placeholder stays visible.';
+    statusMessage.textContent =
+        'Could not load the local JSON file (' + error.message +
+        '), so the placeholder stays visible.';
   }
 
   function loadIdeas() {
     fetch(IDEAS_URL)
         .then(function(response) {
           if (!response.ok) {
-            throw new Error('Request failed');
+            throw new Error('HTTP error: ' + response.status + ' ' + response.statusText);
           }
 
           return response.json();
