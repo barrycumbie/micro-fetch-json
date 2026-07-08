@@ -1,0 +1,28 @@
+body {
+  min-height: 100vh;
+}
+
+.idea-image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.detail-list dt {
+  font-weight: 600;
+}
+
+.detail-list dd {
+  margin-bottom: 0.75rem;
+}
+
+.placeholder-card {
+  border-style: dashed;
+}

@@ -1,0 +1,55 @@
+[
+  {
+    "id": "idea-1751932800000",
+    "title": "LEGO Set Match Builder",
+    "tagline": "Start with one brick and discover which owned sets it likely belongs to.",
+    "author": "bcumbie",
+    "date": "2026-07-08T14:30:00.000Z",
+    "createdAt": "2026-07-08T14:30:00.000Z",
+    "modifiedAt": "2026-07-08T16:05:00.000Z",
+    "narrative": "Build a LEGO helper where someone enters a single LEGO piece and the app cross-references it against the sets they own, tracks each set's condition such as fully built or missing pieces, and suggests which sets the piece most likely goes with.",
+    "description": "Build a LEGO helper where someone enters a single LEGO piece and the app cross-references it against the sets they own, tracks each set's condition such as fully built or missing pieces, and suggests which sets the piece most likely goes with.",
+    "tags": [
+      "lego",
+      "inventory",
+      "search",
+      "recommendation"
+    ],
+    "userStory": {
+      "asA": "LEGO collector",
+      "iWant": "to enter one piece and compare it to the sets I already own",
+      "soThat": "I can quickly figure out where the piece belongs and what sets may be incomplete"
+    },
+    "links": [
+      {
+        "type": "repo",
+        "description": "Prototype repository",
+        "url": "https://github.com/example/lego-set-match-builder"
+      },
+      {
+        "type": "resource",
+        "description": "Brick inventory inspiration",
+        "url": "https://rebrickable.com/"
+      },
+      {
+        "type": "img",
+        "description": "Mock preview image",
+        "url": "https://picsum.photos/seed/lego-builder/640/360"
+      }
+    ],
+    "image": "https://picsum.photos/seed/lego-builder/640/360",
+    "favorite": true,
+    "status": "active",
+    "deletedAt": "",
+    "deletedBy": "",
+    "notes": [
+      {
+        "id": "note-1751936700000",
+        "title": "First demo scope",
+        "text": "Start with a single piece lookup, owned set matching, and a simple status flag for built versus missing pieces.",
+        "author": "bcumbie",
+        "date": "2026-07-08T15:45:00.000Z"
+      }
+    ]
+  }
+]
