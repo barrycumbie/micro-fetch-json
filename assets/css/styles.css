@@ -26,3 +26,14 @@ body {
 .placeholder-card {
   border-style: dashed;
 }
+
+.footer-link {
+  color: var(--bs-secondary-color);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: var(--bs-emphasis-color);
+}

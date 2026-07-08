@@ -76,7 +76,9 @@
       var anchor = createElement('a', {
         className: 'text-decoration-none',
         attributes: {
-          href: link.url
+          href: link.url,
+          target: '_blank',
+          rel: 'noopener noreferrer'
         }
       });
       var icon = createElement('i', {

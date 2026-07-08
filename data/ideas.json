@@ -34,10 +34,10 @@
       {
         "type": "img",
         "description": "Mock preview image",
-        "url": "https://picsum.photos/seed/lego-builder/640/360"
+        "url": "https://picsum.photos/640/360"
       }
     ],
-    "image": "https://picsum.photos/seed/lego-builder/640/360",
+    "image": "https://picsum.photos/640/360",
     "favorite": true,
     "status": "active",
     "deletedAt": "",
